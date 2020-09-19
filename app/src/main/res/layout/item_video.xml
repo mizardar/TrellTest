@@ -5,6 +5,14 @@
     <data>
 
         <variable
+            name="currentPosition"
+            type="Integer" />
+
+        <variable
+            name="totalVideos"
+            type="Integer" />
+
+        <variable
             name="modelVideo"
             type="com.mizardar.trelltest.model.ModelVideo" />
 
@@ -53,6 +61,17 @@
             android:layout_margin="16dp"
             android:onClick="@{() -> videoInteractionListener.onBookmarkClick(modelVideo)}"
             />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/shareIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="1/200"
+            android:text="@{@string/positionText(currentPosition,totalVideos)}"
+            android:textColor="@android:color/white"/>
 
 
 

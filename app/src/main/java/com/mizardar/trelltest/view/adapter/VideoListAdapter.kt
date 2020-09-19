@@ -21,10 +21,12 @@ class VideoListAdapter(
 
     inner class VideoHolder(private val itemVideoBinding: ItemVideoBinding) : RecyclerView.ViewHolder(itemVideoBinding.root){
 
-        fun setVideoModel(modelVideo: ModelVideo){
+        fun setVideoModel(position: Int,modelVideo: ModelVideo){
             val file = File(modelVideo.videoPath)
             itemVideoBinding.modelVideo = modelVideo
             itemVideoBinding.videoInteractionListener = videoInteractionListener
+            itemVideoBinding.currentPosition = position+1
+            itemVideoBinding.totalVideos = videoList.size
             itemVideoBinding.videoView.setVideoURI(Uri.fromFile(file))
             itemVideoBinding.videoView.setMediaController(MediaController(context));
             itemVideoBinding.videoView.requestFocus();
@@ -48,6 +50,6 @@ class VideoListAdapter(
 
     override fun onBindViewHolder(holder: VideoHolder, position: Int) {
         val modelVideo = videoList[position]
-        holder.setVideoModel(modelVideo)
+        holder.setVideoModel(position,modelVideo)
     }
 }

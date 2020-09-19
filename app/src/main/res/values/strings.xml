@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TrellTest</string>
+    <string name="positionText">%1d/%2d</string>
 </resources>
