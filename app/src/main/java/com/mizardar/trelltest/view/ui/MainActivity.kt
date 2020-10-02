@@ -69,7 +69,6 @@ class MainActivity : AppCompatActivity() {
         databaseHelper = DatabaseHelper(this)
     }
 
-
     private fun initAllBookmarkedVideos() {
         bookmarkedVideos = getBookmarkedVideos()
     }
@@ -103,7 +102,6 @@ class MainActivity : AppCompatActivity() {
         snapHelper = PagerSnapHelper() // Or PagerSnapHelper
         snapHelper.attachToRecyclerView(videoRecyclerView)
     }
-
 
     private val videoInteractionListener = object :
         VideoInteractionListener {
